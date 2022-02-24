@@ -15,8 +15,7 @@
 body {
     height: 100vh;
     width: 100vw;
-    background-image: url(http://localhost:3000/static/media/bg-stars.166881a1c03d6b1239f5.svg),
-        url(http://localhost:3000/static/media/pattern-hills.815d688fd937623063b5.svg);
+    background-image: url(../images/pattern-hills.svg),url(../images/bg-stars.svg);
     background-repeat: no-repeat;
     background-color: #231d2b;
     background-position-y: bottom;
@@ -38,14 +37,14 @@ body {
     width: 8em;
     height: 8em;
     overflow: hidden;
-    box-shadow: 0px 4px 1px #1a1924;
+    box-shadow: 0px 8px 1px #1a1924;
     z-index: 2;
     position: relative;
     transform-style: preserve-3d;
 }
 .secondsCard:hover .top {
-    transition: transform 1s;
-    transform: rotateX(180deg) translateY(-100%);
+    transition: transform 1s cubic-bezier(1,1.8,1,2.19);
+    transform: rotateX(180deg) translateY(-100%) scale(2);
 }
 .secondsCard:hover .backTop {
     z-index: 2;
@@ -56,7 +55,6 @@ body {
     z-index: 2;
     transition: all 1s;
 }
-//background-color: #211D2B;
 
 .semiDotLeft {
     z-index: 3;
@@ -88,10 +86,6 @@ body {
     align-self: start;
     z-index: 1;
 }
-/* .top:hover {
-    transition: transform 1s;
-    transform: rotateX(180deg) translateY(-100%);
-} */
 .numberTop {
     color: #d34f6f;
     font-size: 6em;
@@ -192,15 +186,18 @@ body {
 .facebook:hover >path
 {
     fill: #fd5f85;
+    cursor: pointer;
     
 }
 .pinterest:hover >path
 {
     fill: #fd5f85;
-    
+    cursor: pointer;
+
 }
 .instagram:hover >path
 {
     fill: #fd5f85;
-    
+    cursor: pointer;
+
 }
