@@ -17,7 +17,7 @@ function App() {
 
   const countDown = () => {
 
-    const countDate = new Date("feb 27, 2022 00:00:00").getTime();
+    const countDate = new Date("feb 27, 2023 00:00:00").getTime();
     const now = new Date().getTime()
     const gap = countDate - now;
     const halfSeconds = 500;
@@ -35,7 +35,6 @@ function App() {
   };
   useEffect(() => {
     setSecondsOn({ on: !secondsOn.on, number: secondsOn.number });
-    console.log(secondsOn)
   }, [halfSeconds])
   useEffect(() => {
     if(seconds===0)
