@@ -35,6 +35,7 @@ function App() {
   };
   useEffect(() => {
     setSecondsOn({ on: !secondsOn.on, number: secondsOn.number });
+    setInterval(countDown,500);
   }, [halfSeconds])
   useEffect(() => {
     if(seconds===0)
@@ -67,8 +68,6 @@ function App() {
     }
   }, [hours])
  
- 
-setInterval(countDown,500);
  
  
 
