@@ -52,6 +52,22 @@ body {
     width: 100%;
     align-self: start;
     
+} 
+.topOn
+{
+    background-color: #2c2c44;
+    border-radius: 5px 5px 0px 0px;
+    
+     backface-visibility: hidden;
+     
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    align-self: start;
+    transform: rotateX(-180deg)scale(1.1);
+transition: transform 0.5s cubic-bezier(1, 1, 1, 1.66);
+transform-origin: bottom;
+
 }
 .secondsCard:hover .top {
     
@@ -73,15 +89,22 @@ transform-origin: bottom;
     z-index: -1;
     align-self: start;
 }
+.backTopOn
+{
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    z-index: -1;
+    align-self: start;
+    background-color:#2c2c44;
+    transition: all .5s ease-in-out;
+}
 .secondsCard:hover .backTop
 {
     background-color:#2c2c44;
     transition: all 1s ease-in-out;
-}
-.secondsCard:hover .backtop {
-    z-index: 2;
-    background-color: #2c2c44;
-    transition: all .7s cubic-bezier(1,1,1,1.66);
 }
 .backBottom
 {
@@ -93,6 +116,18 @@ transform-origin: bottom;
     width: 100%;
     align-self: end;
     
+}
+.backBottomOn
+{
+    background-color: #34364f;
+    border-radius: 5px 5px 5px 5px;
+    overflow: hidden;
+    position: absolute;
+    height: 50%;
+    width: 100%;
+    align-self: end;
+    transition:  all .5s ease-out .3s;
+transform: translateZ(1px);
 }
 .secondsCard:hover .backBottom
 {

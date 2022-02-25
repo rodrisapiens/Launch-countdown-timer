@@ -9,27 +9,17 @@ function App() {
   const [hours, setHours] = useState(23);
   const [days, setDays] = useState(11);
   const [on,setOn]=useState(true);
-  const[comparisonTime,setComparisonTime]=useState(Date.now())
+  const[halfSeconds,setHalfSeconds]=useState(seconds*2)
 
-  /* useEffect(() => {
-    if (seconds === 0) {
-      setMinutes(minutes - 1);
-      setSeconds(59)
-    }
-  }, [seconds])
-  useEffect(() => {
-    if (minutes === 0) {
-      setHours(hours-1);
-      setMinutes(59);
-    }
-  }, [minutes]) */
+  
   const countDown=()=>
   {
-    setOn(!on);
+    
     const countDate= new Date("feb 27, 2022 00:00:00").getTime();
     const now= new Date().getTime()
     const gap=countDate-now;
-    const seconds=1000;
+    const halfSeconds=500;
+    const seconds=halfSeconds*2;
     const minutes=seconds*60;
     const hours=minutes*60;
     const days=hours*24;
@@ -37,8 +27,14 @@ function App() {
     setHours(Math.floor((gap%days)/hours));
     setMinutes(Math.floor((gap%days)%hours/minutes))
     setSeconds(Math.floor((gap%days)%hours%minutes/seconds))
+    setHalfSeconds(Math.floor((gap%days)%hours%minutes/seconds*2))
+    
     
   };
+  useEffect(()=>{
+    setOn(!on);
+    console.log(on)
+  },[halfSeconds])
   /* useEffect(() => {
     if (hours === 0) {
       setDays(days- 1);
@@ -46,7 +42,10 @@ function App() {
     }
   }, [hours]) */
   
-  setInterval(countDown, 1000);
+  
+  setInterval(countDown,500);
+  
+  
 
 
   return (
@@ -139,21 +138,21 @@ function App() {
             <div className="semiDotLeft"></div>
             <div className="semiDotRigth"></div>
 
-            <div className={"top"}>
+            <div className={on?`topOn`:`top`}>
               <h1 className="numberTop">
-              {seconds}
+              {seconds+1}
               </h1>
             </div>
             <div className="bottom">
               <h1 className="numberBottom">
-              {seconds}
+              {seconds+1}
               </h1>
             </div>
-            <div className={"backTop"}>
-              <h1 className="backNumberTop">{seconds-2}</h1>
+            <div className={on?`backTopOn`:"backTop"}>
+              <h1 className="backNumberTop">{seconds}</h1>
             </div>
-            <div className={"backBottom"}>
-              <h1 className="backNumberBottom">{seconds-2}</h1>
+            <div className={on?"backBottomOn":`backBottom`}>
+              <h1 className="backNumberBottom">{seconds}</h1>
             </div>
           </div>
           <h4 className="secondsSubTitle">
